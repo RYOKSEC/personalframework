@@ -37,6 +37,8 @@ Route::get('/questions/ask' ,'GuestQuestionsController@askquestions');
 
 Route::post('/guest/store/question' ,'GuestQuestionsController@store_question');
 
+Route::get('/blog', 'Guestcontroller@getblog');
+
 
 
 //CRUD routes
@@ -79,3 +81,13 @@ Route::get('/destroy/question/answer/{question_id}/{answer_id}','AdminQuestionsC
 Route::get('/admin/blog/create' , 'Admin_blog_controller@create');
 
 Route::post('/admin/store/post' , 'Admin_blog_controller@store');
+
+Route::DELETE('/destroy/post/{id}' , 'Admin_blog_controller@destroy_post');
+
+Route::match(['put', 'patch'], '/admin/update/post/{id}','Admin_blog_controller@update');
+
+Route::get('/admin/blog/edit/{id}' , 'Admin_blog_controller@edit');
+
+//declare
+
+Route::get('/admin/blog/post/{id}' , 'Admin_blog_controller@show_post');

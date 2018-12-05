@@ -1,17 +1,14 @@
-@extends('layouts.admin')
-@section('content')
-
+@extends('layouts.guest')
+@section('blog')
 @if(count($posts) == null)
-<h3>please create some posts</h3>
 <br>
-<a href="/admin/blog/create" class="btn btn-primary">Create a post</a>
+<div style="min-width:400px">
+  <h3>Admin didn't create any post yet</h3>
+</div>
 @else
 <br>
-<a href="/admin/blog/create" class="btn btn-primary">Create a post</a>
-<br>
-<br>
 @foreach($posts as $key => $post)
-<div class="col mb-2" style="min-width:900px;">
+<div class="row mb-2" style="min-width:900px;">
         <div class="col-md-6">
           <div class="card flex-md-row mb-4 box-shadow h-md-250">
             <div class="card-body d-flex flex-column align-items-start">
@@ -24,12 +21,6 @@
               <strong>Tags : {{$tag->name}}</strong>
               @endforeach
               <br>
-              <span><a href="/admin/blog/edit/{{$post->id}}" class="btn btn-success">Edit</a></span>
-             </div>
-             {!! Form::open(['action' => ['Admin_blog_controller@destroy_post', $post->id], 'method' => 'DELETE']) !!}
-             {{Form::submit('Delete',['class' => 'btn btn-danger'])}}
-           {!! Form::close() !!}
-          </div>
         </div>
       </div>
 @endforeach

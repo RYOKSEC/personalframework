@@ -19,6 +19,10 @@
             @yield('cv')
           </main>
       </div>
+      
+      <main class="poistioning">
+        @yield('blog')
+      </main>
 
   <main class="work">
         @yield('works')
