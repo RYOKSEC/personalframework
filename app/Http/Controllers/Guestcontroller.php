@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use App\CV;
 use App\work;
 use App\post;
+use \Conner\Tagging\Model\Tagged;
+use \Conner\Tagging\Taggable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -39,6 +41,6 @@ class Guestcontroller extends Controller
   public function getblog()
   {
     $posts = post::all();
-    return view('guest.blog.showposts' , ['title' => 'Blog'])->with('posts' , $posts);
+    return view('guest.blog.showposts' , ['title' => 'Blog'] , compact('posts'));
   }
 }

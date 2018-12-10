@@ -1,8 +1,9 @@
 <?php namespace Conner\Tagging\Model;
 
 use Conner\Tagging\Contracts\TaggingUtility;
+use \Conner\Tagging\Taggable;
 use Illuminate\Database\Eloquent\Model as Eloquent;
-
+use App\Post;
 /**
  * Copyright (C) 2014 Robert Conner
  */
@@ -45,4 +46,8 @@ class Tagged extends Eloquent
 		return $this->belongsTo($model, 'tag_slug', 'slug');
 	}
 
+	public function posts()
+	{
+		return $this->belongsToMany('App\Post');
+	}
 }

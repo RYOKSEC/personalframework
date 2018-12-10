@@ -7,6 +7,19 @@
 </div>
 @else
 <br>
+<form action="/search" method="POST" role="search" style="float:left">
+    {{ csrf_field() }}
+    <div class="input-group">
+        <input type="text" class="form-control" name="q"
+            placeholder="Search posts by tags"> <span class="input-group-btn">
+            <button type="submit" class="btn btn-success">
+                <span class="glyphicon glyphicon-search">search</span>
+            </button>
+        </span>
+    </div>
+</form>
+<br>
+<br>
 @foreach($posts as $key => $post)
 <div class="row mb-2" style="min-width:900px;">
         <div class="col-md-6">

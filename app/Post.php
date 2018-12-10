@@ -1,7 +1,6 @@
 <?php
 
 namespace App;
-
 use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
@@ -10,4 +9,9 @@ class Post extends Model
     protected $table ='posts';
 
     protected $fillable = [ 'title', 'body','slug' ];
+
+    public function tags()
+    {
+      return $this->belongsToMany('\Conner\Tagging\Model\Tagged');
+    }
 }

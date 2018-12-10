@@ -18,7 +18,7 @@ if ($title == null) {
 }else{
     $Q = question::all();
     $A = answer::all();
-    return view('guest.questions.answerd', ['title' => 'Answerd Questions'] ,compact('Q') , compact('A'));
+    return view('guest.questions.answerd', ['title' => 'Answerd Questions'] ,compact('Q' , 'A'));
   }
   }
 
