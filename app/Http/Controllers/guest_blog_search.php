@@ -15,10 +15,9 @@ class guest_blog_search extends Controller
       {
           $q = Input::get ( 'q' );
           $posts = Tagged::where('tag_name','LIKE','%'.$q.'%')->with('posts')->get();
-          dd($posts);
           if(count($posts) > 0)
-              return view('guest.blog.search_resualt' , ['title' => 'Resaults'])->withDetails($posts)->withQuery ( $q );
-          else return view ('guest.blog.no_resault' , ['title' => 'Resaults'])->withMessage('No Details found');
+              return view('guest.blog.search_resualt' , ['title' => 'Resaults'])->with('posts' , $posts)->withQuery ( $q );
+          else return view ('guest.blog.no_resault' , ['title' => 'Resaults']);
       }
 
 }
