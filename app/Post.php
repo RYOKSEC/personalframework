@@ -8,7 +8,7 @@ class Post extends Model
 
     protected $table ='posts';
 
-    protected $fillable = [ 'title', 'body','slug' ];
+    protected $fillable = [ 'title', 'body','slug' , 'post_id' , 'tag_id'];
 
     public function tags()
     {

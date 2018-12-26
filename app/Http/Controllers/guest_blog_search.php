@@ -15,9 +15,11 @@ class guest_blog_search extends Controller
       {
           $q = Input::get ( 'q' );
           $posts = Tagged::where('tag_name','LIKE','%'.$q.'%')->with('posts')->get();
-          if(count($posts) > 0)
+          if(count($posts) > 0){
               return view('guest.blog.search_resualt' , ['title' => 'Resaults'])->with('posts' , $posts)->withQuery ( $q );
-          else return view ('guest.blog.no_resault' , ['title' => 'Resaults']);
+          }else {
+            return view ('guest.blog.no_resault' , ['title' => 'Resaults']);
+          }
       }
 
 }

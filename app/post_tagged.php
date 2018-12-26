@@ -8,4 +8,5 @@ class post_tagged extends Model
 {
     protected $table ='post_tagged';
 
+
 }

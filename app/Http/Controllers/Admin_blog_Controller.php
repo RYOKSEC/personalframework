@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\post_tagged;
+use Illuminate\Support\Facades\DB;
+use \Conner\Tagging\Model\Tagged;
 
 class Admin_blog_Controller extends Controller
 {
@@ -25,6 +28,7 @@ class Admin_blog_Controller extends Controller
         'body'=>'required',
         'tags'=>'required',
         'slug'=>'required',
+
       ]);
 
       $input = $request->all();
@@ -33,6 +37,14 @@ class Admin_blog_Controller extends Controller
           if ($input != null) {
             $post = post::create($input);
           	$post->tag($tags);
+            $post_id = DB::table('tagging_tagged')->latest('taggable_id')->first();
+            $post_id = $post_id->taggable_id;
+            $tagged_id = DB::table('tagging_tagged')->latest('id')->first();
+            $tagged_id = $tagged_id->id;
+            $relationship = new post_tagged;
+            $relationship->post_id = $post_id;
+            $relationship->tagged_id = $tagged_id;
+            $relationship->save();
             return redirect('/admin/blog')->with('success' , 'Post added successfully');
           }
           return redirect('/admin/blog');

@@ -16,6 +16,7 @@ class CreateTaggedTable extends Migration {
 			$table->string('taggable_type', 125)->index();
 			$table->string('tag_name', 125);
 			$table->string('tag_slug', 125)->index();
+			$table->timestamps();
 		});
 	}
 
