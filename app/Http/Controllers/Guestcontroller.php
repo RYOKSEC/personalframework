@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\CV;
 use App\work;
 use App\post;
+use App\gallarey_comments;
 use \Conner\Tagging\Model\Tagged;
 use \Conner\Tagging\Taggable;
 use Illuminate\Http\Request;
@@ -35,7 +36,8 @@ class Guestcontroller extends Controller
   public function showcase($id , $slug)
   {
     $showwork = Work::find($id);
-    return view('guest.worksgallarey.showcase' , compact('showwork') , ['title' => 'Worksgallarey']);
+    $comments = Work::find($id)->comments;
+    return view('guest.worksgallarey.showcase' , compact('showwork'), ['title' => 'Worksgallarey'])->with('comments' , $comments);
   }
 
   public function getblog()

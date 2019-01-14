@@ -88,10 +88,12 @@ Route::match(['put', 'patch'], '/admin/update/post/{id}','Admin_blog_controller@
 
 Route::get('/admin/blog/edit/{id}' , 'Admin_blog_controller@edit');
 
-//declare
-
 Route::get('/admin/blog/post/{id}' , 'Admin_blog_controller@show_post');
-
 
 //search function
 Route::any('/search', 'guest_blog_search@search');
+
+
+//worksgallarey comments
+
+Route::post('/guest/store/work/comment', 'gallarey_comments_controller@store_comment');

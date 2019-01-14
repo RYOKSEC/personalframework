@@ -25,6 +25,7 @@
       </main>
 
   <main class="work">
+    @include('inc.message')
         @yield('works')
   </main>
     <br>
