@@ -25,10 +25,6 @@ class Admincontroller extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return view('admin.dashboard');
-    }
 
     public function nopage()
     {
@@ -62,8 +58,8 @@ class Admincontroller extends Controller
         'name'=>'required|string',
         'email' => 'required|email|max:255|',
         'phone'=>'required',
-        'qualifications'=>'required|size:30',
-        'Workexperience'=>'required|size:30',
+        'qualifications'=>'required',
+        'Workexperience'=>'required',
         'Interests'=>'required',
         'birthdate'=>'nullable|date',
       ]);
@@ -96,8 +92,8 @@ class Admincontroller extends Controller
         'name'=>'required|string',
         'email' => 'required|email|max:255',
         'phone'=>'required',
-        'qualifications'=>'required|size:30',
-        'Workexperience'=>'required|size:30',
+        'qualifications'=>'required',
+        'Workexperience'=>'required',
         'Interests'=>'required',
         'birthdate'=>'nullable|date',
       ]);

@@ -10,7 +10,7 @@
       </header>
       <div class="card-block">
         <div class="img-card">
-          <img src="/storage/worksgallarey/{{$work->picture}}" class="w-100" />
+          <img src="/work_picture/{{$work->picture}}" class="w-100" />
         </div>
         <p class="tagline card-text text-xs-center" style="text-align: center">{{$work->bio}}</p>
         <a href="/worksgallarey/workshowcase/{{$work->id}}/{{$work->slug}}" class="btn btn-primary btn-block" style="text-align: center"><i class="fa fa-eye"></i>View work</a>

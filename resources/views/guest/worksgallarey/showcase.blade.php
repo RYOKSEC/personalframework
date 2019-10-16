@@ -4,7 +4,7 @@
 
 <div style="width:600px;">
 <h1 style="text-align:center;">{{$showwork->title}}</h1>
-<img src="/storage/worksgallarey/{{$showwork->picture}}" style="width:600px;" />
+<img src="/work_picture/{{$showwork->picture}}" style="width:600px;" />
 <br>
 <br>
 <h1 style="text-align:center;">{{$showwork->bio}}</h1>
@@ -23,7 +23,7 @@
 
 @foreach($comments as $comment)
 
-                <p class="text-dark" href="#">{{$comment->body}}</p>
+<p class="text-dark" href="#">{{$comment->body}}</p>
 
 @endforeach
 @endsection

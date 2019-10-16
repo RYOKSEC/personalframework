@@ -1,7 +1,6 @@
 @extends('layouts.admin')
 @section('content')
 <br>
-
 <div style="width:600px;">
 <a href="/admin/worksgallarey/edit/{{$showwork->id}}" class="btn btn-primary" >Edit</a>
 
@@ -11,7 +10,7 @@
     <br>
 
 <h1 style="text-align:center;">{{$showwork->title}}</h1>
-<img src="/storage/worksgallarey/{{$showwork->picture}}" style="width:600px;" />
+<img src="/work_picture/{{$showwork->picture}}" style="width:600px;" />
 <br>
 <br>
 <h1 style="text-align:center;">{{$showwork->bio}}</h1>

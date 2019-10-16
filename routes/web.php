@@ -14,8 +14,6 @@
 
 Auth::routes();
 //admin routes
-Route::get('/Dashboard', 'Admincontroller@index');
-
 Route::get('/admin/cv','Admincontroller@getcv');
 
 Route::get('/admin/worksgallarey','Admincontroller@getgallarey');

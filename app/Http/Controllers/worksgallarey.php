@@ -34,8 +34,8 @@ class worksgallarey extends Controller
       //create new filename
       $filenameToStore = $filename.'_'.time().'.'.$extension;
       //upload image
-      $path = $request->file('picture')->StoreAs('public/worksgallarey' , $filenameToStore);
-
+      $image_path = '/work_picture/'.$filenameToStore;
+      $request->file('picture')->move(public_path('/work_picture'), $filenameToStore);  
       //new work
       $work = new work;
       $work->title = $request->input('title');

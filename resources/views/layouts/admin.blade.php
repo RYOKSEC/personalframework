@@ -71,10 +71,15 @@
             </div>
         </nav>
         @include('inc.adminnav')
-        <main class="poistioning">
+        <div class="container @lang('admin.dir')">
+        <div class="row justify-content-center">
+        <div class="col-md-8">        
           @include('inc.message')
           @yield('content')
-        </main>
+        </div>
+        </div>
+        </div>
+
     </div>
 
         @yield('js')

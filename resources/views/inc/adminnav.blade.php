@@ -14,12 +14,6 @@
                </li>
 
                 <li>
-                  <div onclick="location.href='/Dashboard'">
-                    <i class="fa fa-line-chart"></i> Dashboard
-                  </div>
-                </li>
-
-                <li>
                   <div onclick="location.href='/admin/cv'">
                   <i class="fa fa-user fa-lg"></i> Cv
                 </div>
